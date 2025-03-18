@@ -8,6 +8,7 @@
 			<th>Částka</th>
 			<th>Měna</th>
 			<th>Stav</th>
+			<th>Položky</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -18,6 +19,12 @@
 			<td>{$o->price}</td>
 			<td>{$o->currency}</td>
 			<td>{$o->state}</td>
+			<td>
+				{foreach $o->related('order_item','order_id') as $item}
+					<a>{$item->item->title}</a>{sep}, {/sep}
+					<a>{$item->item->price}</a>{sep}, {/sep}
+				{/foreach}
+			</td>
 		</tr>
 		</tbody>
 	</table>
