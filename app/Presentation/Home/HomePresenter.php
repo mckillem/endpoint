@@ -20,6 +20,6 @@ final class HomePresenter extends Nette\Application\UI\Presenter
 
 	public function actionGetOrder(int $id): void
 	{
-		echo $this->order->getOrderById($id);
+		$this->template->order = $this->order->getOrderById($id);
 	}
 }

@@ -1,0 +1,24 @@
+{ifset $order}
+	<table n:if=$order>
+		<thead>
+		<tr>
+			<th>Identifikátor</th>
+			<th>Datum vytvoření</th>
+			<th>Název</th>
+			<th>Částka</th>
+			<th>Měna</th>
+			<th>Stav</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr n:foreach="$order as $o">
+			<td>{$o->id}</td>
+			<td>{$o->createdAt}</td>
+			<td>{$o->title}</td>
+			<td>{$o->price}</td>
+			<td>{$o->currency}</td>
+			<td>{$o->state}</td>
+		</tr>
+		</tbody>
+	</table>
+{/ifset}

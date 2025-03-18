@@ -21,11 +21,8 @@ class Order
 		return $this->db->table('order');
 	}
 
-	public function getOrderById(int $id): string
+	public function getOrderById(int $id)
 	{
-		$order = $this->getTable()->get($id);
-
-//		return json_encode($order);
-		return $order->title;
+		return $this->getTable()->where(['id' => $id])->fetchAll();
 	}
 }
