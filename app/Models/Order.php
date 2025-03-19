@@ -21,7 +21,7 @@ class Order
 		return $this->db->table('order');
 	}
 
-	public function getOrderById(int $id)
+	public function getOrderById(int $id): array
 	{
 		return $this->getTable()->where(['id' => $id])->fetchAll();
 	}
